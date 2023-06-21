@@ -1,0 +1,26 @@
+{
+    "name": "ip-address",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "check-and-fix-lint": "(echo '\n---\n\nScanning for lint error...' && eslint .) || (echo '\n\n---\n\nFound lint error, working on it...' && eslint . --fix) || echo \"\n\nWARNING: There are some error that can't be fixed automatically!\"",
+        "lintfix": "npm run --silent check-and-fix-lint"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@fontsource/roboto": "^5.0.3",
+        "@mui/icons-material": "^5.11.16",
+        "@mui/material": "^5.13.5",
+        "eslint": "8.43.0",
+        "eslint-config-next": "13.4.6",
+        "next": "13.4.6",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "ua-parser-js": "^1.0.35"
+    }
+}
