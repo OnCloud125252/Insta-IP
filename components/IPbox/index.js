@@ -7,7 +7,7 @@ export default function IPbox({ IPaddress }) {
     const [copySuccess, setCopySuccess] = useState(false);
 
     return (
-        <>
+        <div className={styles.IPboxContainer}>
             <div className={styles.IPbox}
                 onClick={async () => copyToClipboard(IPaddress)}
                 onMouseEnter={() => setCopySuccess(false)}
@@ -15,15 +15,15 @@ export default function IPbox({ IPaddress }) {
                     setCopySuccess(false);
                 }, 200)}
             >
-                <div className={styles.labelTitleContainer}>
+                <div className={joinClasses(styles.labelTitleContainer, "noSelect")}>
                     <div className={styles.labelTitle}>Your Public IP address</div>
                 </div>
-                <div className={[styles.IPaddress, "noSelect"].join(" ")}>{IPaddress}</div>
-                <div className={styles.labelTooltipContainer}>
+                <div className={joinClasses(styles.IPaddress, "noSelect")}>{IPaddress}</div>
+                <div className={joinClasses(styles.labelTooltipContainer, "noSelect")}>
                     <div className={styles.labelTooltip}>{copySuccess ? "Copied !" : "Click to copy"}</div>
                 </div>
-            </div >
-        </>
+            </div>
+        </div>
     );
 
     /**
@@ -37,4 +37,8 @@ export default function IPbox({ IPaddress }) {
         };
         return setCopySuccess(true);
     }
+}
+
+function joinClasses(...classes) {
+    return [...classes].join(" ");
 }

@@ -1,19 +1,54 @@
+.IPboxContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    --IPboxBorderColor: #004992;
+    --IPboxBorderColorHover: #007FFF;
+}
+
 .IPbox {
-    border: 3px solid #004181;
+    border: 3px solid var(--IPboxBorderColor);
     border-radius: 10px;
     width: fit-content;
-    min-width: 400px;
+    /* min-width: 400px; */
     position: relative;
     padding: 20px;
-    margin: 20% auto 0 auto;
+    /* margin: 20% auto 0 auto; */
     text-align: center;
     cursor: pointer;
     transition-duration: 1s;
+    /* transform: translateY(-30%); */
+    --labelFontSize: 25px;
+    --IPaddressFontSize: 150px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .IPbox {
+        --labelFontSize: 23px;
+        --IPaddressFontSize: 100px;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .IPbox {
+        --labelFontSize: 20px;
+        --IPaddressFontSize: 60px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .IPbox {
+        --labelFontSize: 15px;
+        --IPaddressFontSize: 30px;
+    }
 }
 
 .IPbox:hover {
     transition-duration: 0.4s;
-    border: 3px solid #007FFF;
+    border: 3px solid var(--IPboxBorderColorHover);
     border-radius: 0;
 }
 
@@ -21,39 +56,39 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: calc(-13px - 3px);
+    top: calc((var(--labelFontSize) / 2 + 3px) * -1);
 }
 
 .labelTitle {
-    font-size: 25px;
+    font-size: var(--labelFontSize);
     font-weight: 700;
     width: fit-content;
-    color: #004181;
-    padding: 0 15px 0 15px;
-    margin: 0 auto 0 30px;
+    color: var(--IPboxBorderColor);
+    padding: 0 calc(var(--labelFontSize) / 2) 0 calc(var(--labelFontSize) / 2);
+    margin: 0 auto 0 var(--labelFontSize);
     background-color: var(--background-color);
     transition-duration: 1s;
 }
 
 .IPbox:hover .labelTitle {
     transition-duration: 0.3s;
-    color: #007FFF;
+    color: var(--IPboxBorderColorHover);
 }
 
 .labelTooltipContainer {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: calc(-13px - 3px);
+    bottom: calc((var(--labelFontSize) / 2 + 3px) * -1);
 }
 
 .labelTooltip {
-    font-size: 25px;
+    font-size: var(--labelFontSize);
     font-weight: 700;
     width: fit-content;
     color: #004181;
-    padding: 0 15px 0 15px;
-    margin: 0 30px 0 auto;
+    padding: 0 calc(var(--labelFontSize) / 2) 0 calc(var(--labelFontSize) / 2);
+    margin: 0 var(--labelFontSize) 0 auto;
     background-color: var(--background-color);
     transform: scaleX(0);
     transition-duration: 0.2s;
@@ -61,9 +96,9 @@
 
 .IPbox:hover .labelTooltip {
     transform: scaleX(1);
-    color: #007FFF;
+    color: var(--IPboxBorderColorHover);
 }
 
 .IPaddress {
-    font-size: 150px;
+    font-size: var(--IPaddressFontSize);
 }
