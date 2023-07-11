@@ -13,10 +13,8 @@ export default function handler(req, res) {
         userAgent = parser.getResult();
     }
 
-    setTimeout(() => {
-        res.status(200).json({
-            proxyIPs,
-            userAgent
-        });
-    }, 10000);
+    res.status(200).json({
+        proxyIPs,
+        userAgent
+    });
 }
