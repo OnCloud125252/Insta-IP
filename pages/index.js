@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";
+// import * as LottiePlayer from "@lottiefiles/lottie-player";
 
 import IPbox from "@/components/IPbox";
 import Information from "@/components/Information";
+import GithubIconAnimation from "@/components/GithubIconAnimation";
 
 
 export default function Index() {
@@ -34,6 +37,7 @@ export default function Index() {
     });
 
     useEffect(() => {
+        import("@lottiefiles/lottie-player");
         (async () => {
             const response = await (await fetch("/api/get-ip")).json();
             console.log(JSON.stringify(response, null, 4));
@@ -42,9 +46,15 @@ export default function Index() {
     }, []);
 
     return (
-        <main style={{ overflow: "hidden" }}>
-            <IPbox IPaddress={clientInfo.proxyIPs[0]} />
-            <Information clientInfo={clientInfo} />
-        </main>
+        <>
+            <Head>
+                <title>IP address</title>
+            </Head>
+            <main style={{ overflow: "hidden" }}>
+                <IPbox IPaddress={clientInfo.proxyIPs[0]} />
+                <Information clientInfo={clientInfo} />
+                <GithubIconAnimation />
+            </main>
+        </>
     );
 }
