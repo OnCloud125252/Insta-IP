@@ -79,7 +79,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: calc((var(--labelFontSize) / 2 + 3px) * -1);
+    bottom: calc((var(--labelFontSize) / 2 + 5px) * -1);
 }
 
 .labelTooltip {
