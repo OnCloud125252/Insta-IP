@@ -53,7 +53,7 @@ export default function Index() {
             <main style={{ overflow: "hidden" }}>
                 <IPbox IPaddress={clientInfo.proxyIPs[0]} />
                 <Information clientInfo={clientInfo} />
-                <GithubIconAnimation />
+                <GithubIconAnimation projectURL="https://github.com/OnCloud125252/Insta-IP" />
             </main>
         </>
     );

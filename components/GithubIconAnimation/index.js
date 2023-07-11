@@ -3,12 +3,12 @@ import { useRef } from "react";
 import styles from "./GithubIconAnimation.module.css";
 
 
-export default function GithubIconAnimation() {
+export default function GithubIconAnimation({projectURL}) {
     const ref = useRef(null);
 
     return (
         <div className={styles.github_icon_container} style={{ position: "absolute", top: "0", margin: "25px" }}>
-            <a className={styles.github_icon} href="https://github.com/OnCloud125252/IP-address" target="_blank">
+            <a className={styles.github_icon} href={projectURL} target="_blank">
                 <lottie-player
                     ref={ref}
                     speed="0.8" loop autoplay
@@ -18,7 +18,7 @@ export default function GithubIconAnimation() {
                     @
                 </span>
                 <p>
-                    OnCloud125252/IP-address
+                    {projectURL.split("/").slice(3).join("/")}
                 </p>
             </a>
         </div>
