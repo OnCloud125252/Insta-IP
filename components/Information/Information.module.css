@@ -1,0 +1,9 @@
+.informationContainer {
+    max-width: 90vw;
+    margin: 5vw auto 5vw auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5vw;
+}
