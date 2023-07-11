@@ -48,7 +48,7 @@ export default function Index() {
     return (
         <>
             <Head>
-                <title>IP address</title>
+                <title>Insta IP</title>
             </Head>
             <main style={{ overflow: "hidden" }}>
                 <IPbox IPaddress={clientInfo.proxyIPs[0]} />
