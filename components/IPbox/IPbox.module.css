@@ -100,5 +100,6 @@
 }
 
 .IPaddress {
+    min-width: calc(var(--IPaddressFontSize) * 5.5);
     font-size: var(--IPaddressFontSize);
 }

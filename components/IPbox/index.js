@@ -26,7 +26,7 @@ export default function IPbox({ IPaddress }) {
                     <div className={styles.labelTitle}>Your Public IP address</div>
                 </div>
                 <div className={joinClasses(styles.IPaddress, "noSelect")}>{
-                    IPaddress ?? <Skeleton variant="rounded" animation="wave" width="calc(var(--IPaddressFontSize) * 7)" height="var(--IPaddressFontSize)" />
+                    IPaddress ?? <Skeleton variant="rounded" animation="wave" width="calc(var(--IPaddressFontSize) * 5.5)" height="calc(var(--IPaddressFontSize) * 1.5)" />
                 }</div>
                 <div className={joinClasses(styles.labelTooltipContainer, "noSelect")}>
                     <div className={styles.labelTooltip}>{

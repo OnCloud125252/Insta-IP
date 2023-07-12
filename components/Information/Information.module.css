@@ -1,9 +1,14 @@
 .informationContainer {
     max-width: 90vw;
     margin: 5vw auto 5vw auto;
+}
+
+.cardContainer {
+    max-width: 1500px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 5vw;
+    gap: min(5vw, 50px);
 }

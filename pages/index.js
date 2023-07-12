@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-// import * as LottiePlayer from "@lottiefiles/lottie-player";
 
 import IPbox from "@/components/IPbox";
 import Information from "@/components/Information";
@@ -51,9 +50,9 @@ export default function Index() {
                 <title>Insta IP</title>
             </Head>
             <main style={{ overflow: "hidden" }}>
+                <GithubIconAnimation projectURL="https://github.com/OnCloud125252/Insta-IP" />
                 <IPbox IPaddress={clientInfo.proxyIPs[0]} />
                 <Information clientInfo={clientInfo} />
-                <GithubIconAnimation projectURL="https://github.com/OnCloud125252/Insta-IP" />
             </main>
         </>
     );
